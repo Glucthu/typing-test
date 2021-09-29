@@ -1,5 +1,9 @@
 var maxTime = 60;
 var timeElapsed = 1;
+var quote = document.getElementById("quote").innerHTML;
+var typedText = document.getElementById("text").value;
+var errors = 0;
+
 
 function changeMaxTime(newTime){
 	if(timeElapsed == 1)
@@ -9,12 +13,9 @@ function changeMaxTime(newTime){
 }
 
 function startGame(){
-	let quote = document.getElementById("quote").innerHTML;
 	document.getElementById("max-time").innerHTML = maxTime;
-
-	let interval = setInterval(function(){
-		let typedText = document.getElementById("text").value;
-		
+	
+	let interval = setInterval(function(){		
 		if(typedText != quote && timeElapsed <= maxTime) {
 			document.getElementById("timer").innerHTML = timeElapsed;
 			timeElapsed++;
@@ -26,8 +27,16 @@ function startGame(){
 }
 
 function checkText(){
-	
-};
+	errors = 0;
+	typedText = document.getElementById("text").value;
+	for(let i in typedText)	
+		if(typedText[i] != quote[i])
+		{
+			errors++
+		}
+	document.getElementById("errors").innerHTML = errors;
+}
+
 
 function updateWPM(typed){
 	let wordsTyped = typed.split(" ").length;
