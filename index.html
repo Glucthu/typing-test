@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Typing speed test</title>
+	</head>
+	<body>
+		<div>
+			<button type="button" onclick="changeMaxTime(15)">15</button>
+			<button type="button" onclick="changeMaxTime(30)">30</button> 
+			<button type="button" onclick="changeMaxTime(60)">60</button> 
+			<button type="button" onclick="changeMaxTime(120)">120</button> 
+		</div>
+		<p id="quote"></p>
+		<textarea name="text" id="text" onfocus="startGame()" oninput="checkText()"></textarea>
+		<div id="stats">
+			<p>Time:</p>
+			<p id="timer"></p>
+			<p>/</p>
+			<p id="max-time"></p>
+			<p>WPM:</p>
+			<p id="wpm"></p>
+		</div>
+		
+		<script src="./quotes.js"></script>
+		<script src="./game.js"></script>
+	</body>
+</html>

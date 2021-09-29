@@ -1,0 +1,9 @@
+#stats {
+	width: 100px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#stats p {
+	display: inline-block;
+}
