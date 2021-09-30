@@ -32,8 +32,8 @@ function checkText(){
 	for(let i in typedText)	
 		if(typedText[i] != quote[i])
 		{
-			errors++
-		}
+			errors++;
+		} 
 	document.getElementById("errors").innerHTML = errors;
 }
 
