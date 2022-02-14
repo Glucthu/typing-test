@@ -9,29 +9,36 @@
 		<link rel="stylesheet" href="fonts.css" />
 		<title>Typing speed test</title>
 	</head>
-	<body>
+	<body id="body">
 		<nav>
-			<p id="title">Typing Test</p>
+			<h1 id="title">Typing Test</h1>
 			<div id="time-buttons">
-				<button type="button" onclick="changeMaxTime(15)">15</button>
-				<button type="button" onclick="changeMaxTime(30)">30</button> 
-				<button type="button" onclick="changeMaxTime(60)">60</button> 
-				<button type="button" onclick="changeMaxTime(120)">120</button> 
+				<button class="time-button" type="button" onclick="changeMaxTime(15)">15</button>
+				<button class="time-button" type="button" onclick="changeMaxTime(30)">30</button> 
+				<button class="time-button time-selected" type="button" onclick="changeMaxTime(60)">60</button> 
+				<button class="time-button" type="button" onclick="changeMaxTime(120)">120</button> 
 			</div>
 		</nav>
-		<p id="quote"></p>
-		<textarea name="text" id="text" onfocus="startGame()" placeholder="Click here to start..." oninput="checkText()"></textarea>
+		<div id="quote"></div>
+		<textarea name="text" id="text" onfocus="startGame()" placeholder="Click here to start..." oninput="checkText()" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></textarea>
 		<div id="stats">
-			<p>Time:</p>
-			<p id="timer"></p>
-			<p>/</p>
-			<p id="max-time"></p>
-			<p>WPM:</p>
-			<p id="wpm"></p>
-			<p>Errors:</p>
-			<p id="errors"></p>
+			<div>
+				<p>Time:</p>
+				<p id="timer"></p>
+				<p>/</p>
+				<p id="max-time"></p>
+			</div>
+			<div>
+				<p>WPM:</p>
+				<p id="wpm"></p>
+			</div>
+			<div>
+				<p>Incorrect typed:</p>
+				<p id="incorrectTyped"></p>
+			</div>
 		</div>
 		
+		<script src="./functions.js"></script>
 		<script src="./quotes.js"></script>
 		<script src="./game.js"></script>
 	</body>
